@@ -47,7 +47,8 @@
             <artifactId>spring-cloud-starter-ribbon</artifactId>
             <version>1.2.2.RELEASE</version>
         </dependency>
-		
+        
+    
 	</dependencies>
 
 	<dependencyManagement>
