@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.common.bo.User;
 import com.sugon.demo.service.HiService;
+import com.sugon.demo.service.HiServiceCopy;
 
 
 @RestController
@@ -19,6 +20,9 @@ public class Hi {
 	 @Autowired
 	 private HiService hiService;
 	
+	 @Autowired
+	 private HiServiceCopy hiServiceCopy;
+	 
 	@GetMapping("/")
 	public String hi(){
 		return "hi " + port;
@@ -30,4 +34,9 @@ public class Hi {
 		return user;
 	}
 	
+	@GetMapping("/getuserbyidcopy")
+	public User getuserbyidcopy(@RequestParam String id){
+		User user = hiService.hi(id);
+		return user;
+	}
 }
